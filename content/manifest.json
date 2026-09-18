@@ -1,0 +1,95 @@
+{
+  "sitio": {
+    "titulo": "AD Ofensivo",
+    "subtitulo": "Apuntes de Active Directory ofensivo",
+    "dominio": "DC=notes,DC=local"
+  },
+  "fases": [
+    {
+      "id": "introduccion",
+      "ou": "OU=Introduccion",
+      "titulo": "Introducción",
+      "descripcion": "Las bases de Active Directory: qué es, cómo se estructura y cómo se autentica, antes de entrar en ataques.",
+      "tecnicas": [
+        { "id": "bases-ad", "file": "content/tecnicas/introduccion/bases-ad.md" }
+      ]
+    },
+    {
+      "id": "reconocimiento",
+      "ou": "OU=Reconocimiento-Enumeracion",
+      "titulo": "Reconocimiento y Enumeración",
+      "descripcion": "Primer contacto con el dominio: qué hay, quién es quién, y qué caminos de ataque existen antes de comprometer nada.",
+      "tecnicas": [
+        { "id": "enumeracion-smb-rpc", "file": "content/tecnicas/reconocimiento/enumeracion-smb-rpc.md" },
+        { "id": "enumeracion-ldap", "file": "content/tecnicas/reconocimiento/enumeracion-ldap.md" },
+        { "id": "enumeracion-usuarios-kerberos", "file": "content/tecnicas/reconocimiento/enumeracion-usuarios-kerberos.md" },
+        { "id": "mapeo-bloodhound", "file": "content/tecnicas/reconocimiento/mapeo-bloodhound.md" }
+      ]
+    },
+    {
+      "id": "credenciales-red",
+      "ou": "OU=Ataques-Credenciales-Red",
+      "titulo": "Ataques de Credenciales en Red",
+      "descripcion": "Obtención de credenciales o material equivalente (hashes, tickets) abusando de protocolos de autenticación en la red.",
+      "tecnicas": [
+        { "id": "kerberoasting", "file": "content/tecnicas/credenciales-red/kerberoasting.md" },
+        { "id": "asreproasting", "file": "content/tecnicas/credenciales-red/asreproasting.md" },
+        { "id": "password-spraying", "file": "content/tecnicas/credenciales-red/password-spraying.md" },
+        { "id": "llmnr-nbtns-poisoning", "file": "content/tecnicas/credenciales-red/llmnr-nbtns-poisoning.md" },
+        { "id": "smb-relay", "file": "content/tecnicas/credenciales-red/smb-relay.md" },
+        { "id": "malicious-scf-file", "file": "content/tecnicas/credenciales-red/malicious-scf-file.md" }
+      ]
+    },
+    {
+      "id": "abuso-configuracion",
+      "ou": "OU=Abuso-Configuracion",
+      "titulo": "Abuso de Configuración",
+      "descripcion": "Errores de configuración del propio AD (permisos, plantillas, políticas) que se pueden convertir en escalada de privilegios.",
+      "tecnicas": [
+        { "id": "abuse-gpp", "file": "content/tecnicas/abuso-configuracion/abuse-gpp.md" },
+        { "id": "abuse-acl", "file": "content/tecnicas/abuso-configuracion/abuse-acl.md" },
+        { "id": "adcs-abuse", "file": "content/tecnicas/abuso-configuracion/adcs-abuse.md" }
+      ]
+    },
+    {
+      "id": "movimiento-lateral",
+      "ou": "OU=Movimiento-Lateral-PostExplotacion",
+      "titulo": "Movimiento Lateral y Post-Explotación",
+      "descripcion": "Una vez tenemos material de autenticación, cómo lo reutilizamos para saltar entre equipos y volcar más credenciales.",
+      "tecnicas": [
+        { "id": "pass-the-hash", "file": "content/tecnicas/movimiento-lateral/pass-the-hash.md" },
+        { "id": "pass-the-ticket", "file": "content/tecnicas/movimiento-lateral/pass-the-ticket.md" },
+        { "id": "dump-credenciales-locales", "file": "content/tecnicas/movimiento-lateral/dump-credenciales-locales.md" },
+        { "id": "dcsync", "file": "content/tecnicas/movimiento-lateral/dcsync.md" }
+      ]
+    },
+    {
+      "id": "persistencia",
+      "ou": "OU=Persistencia-Dominancia",
+      "titulo": "Persistencia y Dominancia del Dominio",
+      "descripcion": "Con el control del dominio (o de krbtgt), cómo mantenerlo y garantizar el regreso aunque cambien contraseñas.",
+      "tecnicas": [
+        { "id": "golden-ticket", "file": "content/tecnicas/persistencia/golden-ticket.md" },
+        { "id": "silver-ticket", "file": "content/tecnicas/persistencia/silver-ticket.md" },
+        { "id": "badsuccessor", "file": "content/tecnicas/persistencia/badsuccessor.md" },
+        { "id": "tombstone-reanimation", "file": "content/tecnicas/persistencia/tombstone-reanimation.md" }
+      ]
+    }
+  ],
+  "herramientas": [
+    { "id": "netexec", "file": "content/herramientas/netexec.md" },
+    { "id": "impacket", "file": "content/herramientas/impacket.md" },
+    { "id": "mimikatz", "file": "content/herramientas/mimikatz.md" },
+    { "id": "rubeus", "file": "content/herramientas/rubeus.md" },
+    { "id": "responder", "file": "content/herramientas/responder.md" },
+    { "id": "bloodhound", "file": "content/herramientas/bloodhound.md" },
+    { "id": "kerbrute", "file": "content/herramientas/kerbrute.md" },
+    { "id": "smb-tools", "file": "content/herramientas/smb-tools.md" },
+    { "id": "ldap-tools", "file": "content/herramientas/ldap-tools.md" },
+    { "id": "mitm6", "file": "content/herramientas/mitm6.md" },
+    { "id": "gpp-decrypt", "file": "content/herramientas/gpp-decrypt.md" },
+    { "id": "powersploit", "file": "content/herramientas/powersploit.md" },
+    { "id": "hashcat-john", "file": "content/herramientas/hashcat-john.md" },
+    { "id": "certipy", "file": "content/herramientas/certipy.md" }
+  ]
+}
